@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+        body{
+            margin: 30px 20px 30px 20px;
+        }
+        .row{
+            margin: 5% 5% 5% 5%;
+            padding: 0% 5% 0% 5%;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container ">
+        <div class="center">
+            <div class="col-4"></div>
+    <div class="card col-4" >
+        <div class="card-body">
+          <h5 class="card-title" align="center">Calculator</h5>
+          <div class="container text-center" align="center">
+            <div class="row">
+                <div class="col-12">
+                    <input type="text" id= "displayScreen" disabled>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button  class="col-2 btn btn-primary" onclick="printData(1)"> 1</button>
+                    <button  class="col-2 btn btn-primary" onclick="printData(2)"> 2</button>
+                    <button  class="col-2 btn btn-primary" onclick="printData(3)"> 3</button>
+                    <button  class="col-2 btn btn-primary" onclick="printData('+')"> +</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button  class="col-2 btn btn-primary" onclick="printData(4)">4</button>
+                    <button  class="col-2 btn btn-primary" onclick="printData(5)"> 5</button>
+                    <button  class="col-2 btn btn-primary" onclick="printData(6)"> 6</button>
+                    <button  class="col-2 btn btn-primary" onclick="printData('-')"> -</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button  class="col-2 btn btn-primary" onclick="printData(7)"> 7</button>
+                    <button  class="col-2 btn btn-primary" onclick="printData(8)"> 8</button>
+                    <button  class="col-2 btn btn-primary" onclick="printData(9)"> 9</button>
+                    <button  class="col-2 btn btn-primary" onclick="printData('*')"> *</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button  class="col-2 btn btn-primary" onclick="reset()" >C</button>
+                    <button  class="col-2 btn btn-primary" onclick="printData(0)">0</button>
+                    <button  class="col-2 btn btn-primary" onclick="calculate()">=</button>
+                    <button  class="col-2 btn btn-primary" onclick="printData('%')">%</button>
+                    <!-- <div  class="btn btn-primary" >  </div> -->
+                </div>
+            </div>
+        </div>
+        </div>
+      
+    </div>
+    <div class="col-4"></div>   
+</div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script>
+        function printData(data){
+            document.getElementById("displayScreen").value += data;
+        }
+
+        function calculate(){
+           var data =  document.getElementById("displayScreen").value
+           console.log(data, eval(data));
+           document.getElementById("displayScreen").value = eval(data);
+        }
+
+        function reset(){
+            //console.log("h");
+            document.getElementById("displayScreen").value = "";
+        }
+    </script>
+</body>
+</html>
